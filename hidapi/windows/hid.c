@@ -457,14 +457,17 @@ struct hid_device_info HID_API_EXPORT * HID_API_CALL hid_enumerate(unsigned shor
 			/* Fill out the record */
 			cur_dev->next = NULL;
 			str = device_interface_detail_data->DevicePath;
+            cur_dev->path = NULL;
 			if (str) {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstringop-overflow"
 				len = strlen(str);
+				len = min(len, 4096);  // Do not accept device paths over 4096 bytes to avoid possible overflows
 				cur_dev->path = (char*) calloc(len+1, sizeof(char));
 				strncpy(cur_dev->path, str, len+1);
 				cur_dev->path[len] = '\0';
+#pragma GCC diagnostic pop
 			}
-			else
-				cur_dev->path = NULL;
 
 			/* Serial Number */
 			wstr[0]= 0x0000;
