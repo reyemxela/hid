@@ -14,14 +14,14 @@
 package hid
 
 import (
-	_ "github.com/bearsh/hid/hidapi"
-	_ "github.com/bearsh/hid/hidapi/hidapi"
-	_ "github.com/bearsh/hid/hidapi/libusb"
-	_ "github.com/bearsh/hid/hidapi/linux"
-	_ "github.com/bearsh/hid/hidapi/mac"
-	_ "github.com/bearsh/hid/hidapi/windows"
+	_ "github.com/reyemxela/hid/hidapi"
+	_ "github.com/reyemxela/hid/hidapi/hidapi"
+	_ "github.com/reyemxela/hid/hidapi/libusb"
+	_ "github.com/reyemxela/hid/hidapi/linux"
+	_ "github.com/reyemxela/hid/hidapi/mac"
+	_ "github.com/reyemxela/hid/hidapi/windows"
 
-	_ "github.com/bearsh/hid/libusb"
-	_ "github.com/bearsh/hid/libusb/libusb"
-	_ "github.com/bearsh/hid/libusb/libusb/os"
+	_ "github.com/reyemxela/hid/libusb"
+	_ "github.com/reyemxela/hid/libusb/libusb"
+	_ "github.com/reyemxela/hid/libusb/libusb/os"
 )
